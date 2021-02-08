@@ -1,0 +1,14 @@
+name: 'Quarkus Health Check'
+description: 'Quarkus Health Check with Teams Notifications'
+
+inputs:
+  url:
+    description: Application URL
+    required: true
+  teamsWebHookURL:
+    description: Teams WebHook URL
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'index.js'
