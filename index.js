@@ -2,7 +2,7 @@ const core = require("@actions/core");
 const proc = require("child_process");
 
 function getHealthCheckStatus(applicationURL) {
-  let retryConfig = `--retry 3 --retry-delay 5 --retry-connrefused`;
+  let retryConfig = `--retry 3 --retry-delay 5 --retry-connrefused --max-time 180`;
   let healthCheckRequest = `curl --fail ${applicationURL} ${retryConfig}`;
   let response = proc.execSync(healthCheckRequest).toString();
   core.info(response);
